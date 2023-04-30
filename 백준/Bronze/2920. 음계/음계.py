@@ -1,25 +1,11 @@
-mylist = list(map(int,input().split()))
+note = list(map(int,input().split()))
 
+ascending = all(note[i] < note[i+1] for i in range(7))
+descending = all(note[i] > note[i+1] for i in range(7))
 
-sortlist = []
-
-for i in mylist:
-    sortlist.append(i)
-
-if mylist[0] == 1:
-    sortlist.sort()
-    if mylist == sortlist:
-        print("ascending")
-    else:
-        print("mixed")
-elif mylist[0] == 8:
-    sortlist.sort(reverse=True)
-    if mylist == sortlist:
-        print("descending")
-    else:
-        print("mixed")
+if ascending:
+    print("ascending")
+elif descending:
+    print("descending")
 else:
     print("mixed")
-
-
-
